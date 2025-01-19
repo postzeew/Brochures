@@ -15,7 +15,7 @@ fun HomeScreen(
     when (state) {
         HomeState.Initial -> InitialScreen(onEvent, modifier)
         HomeState.Loading -> LoaderScreen(modifier)
-        is HomeState.Success -> BrochuresScreen(state.brochures, modifier)
-        is HomeState.Error -> ErrorScreen(state.message, onEvent, modifier)
+        is HomeState.Success -> BrochuresScreen(state, onEvent, modifier)
+        is HomeState.Error -> ErrorScreen(state, onEvent, modifier)
     }
 }

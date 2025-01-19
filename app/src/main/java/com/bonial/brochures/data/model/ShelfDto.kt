@@ -40,7 +40,8 @@ data class ShelfDto(
                 data class BrochureDto(
                     val id: Long,
                     val brochureImage: String?,
-                    val publisher: PublisherDto
+                    val publisher: PublisherDto,
+                    val distance: Double
                 ) {
                     @JsonClass(generateAdapter = true)
                     data class PublisherDto(

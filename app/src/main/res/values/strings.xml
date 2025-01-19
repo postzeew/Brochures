@@ -2,4 +2,6 @@
     <string name="app_name">Brochures</string>
     <string name="load_brochures">Load brochures</string>
     <string name="retry">Retry</string>
+    <string name="filter_text">Filter for brochures closer than 5km</string>
+    <string name="clear_filter_text">Clear filter</string>
 </resources>

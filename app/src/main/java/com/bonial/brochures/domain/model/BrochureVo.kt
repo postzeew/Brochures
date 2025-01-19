@@ -4,7 +4,8 @@ data class BrochureVo(
     val id: Long,
     val type: TypeVo,
     val image: ImageVo,
-    val publisherName: String
+    val publisherName: String,
+    val distance: Double
 ) {
     enum class TypeVo {
         USUAL, PREMIUM

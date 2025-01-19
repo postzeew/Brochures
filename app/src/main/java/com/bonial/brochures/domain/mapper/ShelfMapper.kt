@@ -24,7 +24,8 @@ class ShelfMapperImpl @Inject constructor() : ShelfMapper {
                         id = id,
                         type = toBrochureType(content),
                         image = toImage(brochureImage),
-                        publisherName = publisher.name
+                        publisherName = publisher.name,
+                        distance = distance
                     )
                 }
             }

@@ -15,10 +15,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bonial.brochures.R
 import com.bonial.brochures.presentation.home.HomeEvent
+import com.bonial.brochures.presentation.home.HomeState
 
 @Composable
 fun ErrorScreen(
-    message: String,
+    state: HomeState.Error,
     onEvent: (HomeEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -27,7 +28,7 @@ fun ErrorScreen(
         modifier = modifier.fillMaxSize(),
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(text = message)
+            Text(text = state.message)
 
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -42,7 +43,7 @@ fun ErrorScreen(
 @Composable
 private fun ErrorScreenPreview() {
     ErrorScreen(
-        message = "Smth went wrong",
+        state = HomeState.Error(message = "Smth went wrong"),
         onEvent = {}
     )
 }
