@@ -7,11 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.bonial.brochures.presentation.common.viewModels
+import com.bonial.brochures.presentation.home.screen.HomeScreen
 import com.bonial.brochures.ui.theme.BrochuresTheme
 
 class HomeActivity : ComponentActivity() {
@@ -19,35 +19,20 @@ class HomeActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        viewModel.onLoadButtonClicked() // TODO
-
         enableEdgeToEdge()
         setContent {
             BrochuresTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    val state by viewModel.state.collectAsStateWithLifecycle()
+                    HomeScreen(
+                        state = state,
+                        onEvent = { event: HomeEvent ->
+                            viewModel.onEvent(event)
+                        },
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BrochuresTheme {
-        Greeting("Android")
     }
 }
