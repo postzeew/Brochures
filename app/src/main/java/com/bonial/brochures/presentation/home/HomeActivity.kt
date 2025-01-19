@@ -19,6 +19,9 @@ class HomeActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel.onLoadButtonClicked() // TODO
+
         enableEdgeToEdge()
         setContent {
             BrochuresTheme {

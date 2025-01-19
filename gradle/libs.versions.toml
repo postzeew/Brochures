@@ -10,8 +10,14 @@ activityCompose = "1.9.3"
 lifecycleRuntimeCompose = "2.8.6"
 composeBom = "2024.04.01"
 kapt = "1.9.23"
+ksp = "1.9.23-1.0.19"
 dagger = "2.52"
 daggerCompiler = "2.52"
+retrofit = "2.9.0"
+moshi = "1.15.1"
+moshiCodegen = "1.15.1"
+moshiAdapters = "1.15.1"
+retrofitConverterMoshi = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,9 +37,15 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerCompiler" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofitConverterMoshi" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshiCodegen" }
+moshi-adapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "moshiAdapters" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

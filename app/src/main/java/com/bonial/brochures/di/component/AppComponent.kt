@@ -1,6 +1,9 @@
 package com.bonial.brochures.di.component
 
 import android.content.Context
+import com.bonial.brochures.di.module.AppModule
+import com.bonial.brochures.di.module.NetworkModule
+import com.bonial.brochures.di.module.ShelfModule
 import com.bonial.brochures.di.module.ViewModelModule
 import com.bonial.brochures.presentation.common.AppViewModelFactory
 import dagger.BindsInstance
@@ -10,7 +13,10 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        ViewModelModule::class
+        AppModule::class,
+        NetworkModule::class,
+        ViewModelModule::class,
+        ShelfModule::class
     ]
 )
 interface AppComponent {
