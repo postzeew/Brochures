@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.bonial.brochures.presentation.common.viewModels
 import com.bonial.brochures.presentation.home.screen.HomeScreen
-import com.bonial.brochures.ui.theme.BrochuresTheme
+import com.bonial.brochures.presentation.common.ui.theme.BrochuresTheme
 
 class HomeActivity : ComponentActivity() {
     private val viewModel: HomeViewModel by viewModels<HomeViewModelImpl>()
