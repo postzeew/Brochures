@@ -1,4 +1,4 @@
-package com.bonial.brochures
+package com.bonial.brochures.presentation.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,9 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.bonial.brochures.presentation.common.viewModels
 import com.bonial.brochures.ui.theme.BrochuresTheme
 
-class MainActivity : ComponentActivity() {
+class HomeActivity : ComponentActivity() {
+    private val viewModel: HomeViewModel by viewModels<HomeViewModelImpl>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
