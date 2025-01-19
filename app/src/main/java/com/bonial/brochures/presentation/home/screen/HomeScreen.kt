@@ -5,7 +5,6 @@ import androidx.compose.ui.Modifier
 import com.bonial.brochures.presentation.home.HomeEvent
 import com.bonial.brochures.presentation.home.HomeState
 
-
 @Composable
 fun HomeScreen(
     state: HomeState,
